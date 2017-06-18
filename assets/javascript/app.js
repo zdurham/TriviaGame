@@ -117,14 +117,14 @@ $(document).ready( function() {
     var winMessage = $("<h2>");
     messageArea.appendTo($("#content"));
     winMessage.appendTo($(messageArea));
-    winMessage.text("Correct!")
-    currentQuestion++;
+    winMessage.text("Correct!");
 
     // If there are no questions left, then run this function to display gameOver
     if (currentQuestion === (questions.length - 1)) {
-      gameOver();
       clearTimeout(cycle);
+      var gameEnd = setTimeout( gameOver, 5000)
     }
+    currentQuestion++;
   };
   // This function will display the wrong answer screen
   function displayWrong() {
@@ -135,12 +135,14 @@ $(document).ready( function() {
     messageArea.appendTo($("#content"));
     lossMessage.appendTo(messageArea)
     lossMessage.html("Wrong! The right answer was: " + questions[currentQuestion].answers[questions[currentQuestion].values.indexOf(true)]);
-    currentQuestion++;
+
+    // If there are no questions left, then run this function to display gameOver
     if (currentQuestion === (questions.length - 1)) {
-      gameOver();
       clearTimeout(cycle);
+      var gameEnd = setTimeout( gameOver, 5000)
     }
-  }
+    currentQuestion++;
+  };
 
   // This will display the time out screen
   function timedOut() {
@@ -151,22 +153,25 @@ $(document).ready( function() {
     messageArea.appendTo($("#content"));
     lossMessage.appendTo(messageArea)
     lossMessage.html("You timed out! The right answer was: " + questions[currentQuestion].answers[questions[currentQuestion].values.indexOf(true)]);
-    currentQuestion++;
-    if (currentQuestion === (questions.length)) {
-      gameOver();
+    if (currentQuestion === (questions.length - 1)) { 
       clearTimeout(cycle);
+      var gameEnd = setTimeout( gameOver, 5000)
     }
+    currentQuestion++;
   };
+
   // This will display when the currentQuestion amount is equal to questions.length - 1. In other words, when all questions have been answered
   function gameOver() {
+    // Clear out the post-question message
+    $(".message-content").remove();
     var totalCorrect = $("<h3>")
     var totalIncorrect = $("<h3>")
     var totalNone = $("<h3>")
     var restart = $("<button>")
     totalCorrect.appendTo($("#content"))
-    totalCorrect.html("You got: " + correct + " correct!")
+    totalCorrect.html("You got " + correct + " correct!")
     totalIncorrect.appendTo("#content")
-    totalIncorrect.html("You got: " + wrong + " wrong.")
+    totalIncorrect.html("You got " + wrong + " wrong.")
     totalNone.appendTo("#content")
     totalNone.html("You didn't answer " + none + " questions.")
     // Restart button
@@ -179,7 +184,7 @@ $(document).ready( function() {
       totalCorrect.remove();
       totalIncorrect.remove();
       totalNone.remove();
-      restart().remove();
+      restart.remove();
       currentQuestion = 0;
       correct = 0; //records number of correct answers
       wrong = 0; //records number of wrong answers
