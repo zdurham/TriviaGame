@@ -133,7 +133,7 @@ $(document).ready( function() {
 
   // This function will display the correct answer screen
   function displayCorrect() {
-    var cycle = setTimeout(displayQ, 8000)
+    var cycle = setTimeout(displayQ, 10000)
     var messageArea = $("<div>");    
     messageArea.addClass("message-content")
     // Declare content that will go into the messageArea
@@ -153,13 +153,13 @@ $(document).ready( function() {
     // If there are no questions left, then run this function to display gameOver
     if (currentQuestion === (questions.length - 1)) {
       clearTimeout(cycle);
-      var gameEnd = setTimeout( gameOver, 8000)
+      var gameEnd = setTimeout( gameOver, 10000)
     }
     currentQuestion++;
   };
   // This function will display the wrong answer screen
   function displayWrong() {
-    var cycle = setTimeout(displayQ, 8000);
+    var cycle = setTimeout(displayQ, 10000);
     var messageArea = $("<div>");
     messageArea.addClass("message-content")
     var lossMessage = $("<h2>");
@@ -177,14 +177,14 @@ $(document).ready( function() {
     // If there are no questions left, then run this function to display gameOver
     if (currentQuestion === (questions.length - 1)) {
       clearTimeout(cycle);
-      var gameEnd = setTimeout( gameOver, 8000)
+      var gameEnd = setTimeout( gameOver, 10000)
     }
     currentQuestion++;
   };
 
   // This will display the time out screen
   function timedOut() {
-    var cycle = setTimeout(displayQ, 8000);
+    var cycle = setTimeout(displayQ, 10000);
     var messageArea = $("<div>");
     messageArea.addClass("message-content")
     var lossMessage = $("<h2>");
@@ -202,7 +202,7 @@ $(document).ready( function() {
     // If there are no questions left, then run this function to display gameOver
     if (currentQuestion === (questions.length - 1)) { 
       clearTimeout(cycle);
-      var gameEnd = setTimeout( gameOver, 8000)
+      var gameEnd = setTimeout( gameOver, 10000)
     }
     currentQuestion++;
   };
