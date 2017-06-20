@@ -30,7 +30,7 @@ $(document).ready( function() {
       gif: "assets/images/spirited-away1.gif",
     },
     {
-      question: "In the 1980 film Kagemusha, what does the term kagemusha refer to?",
+      question: "In the 1980 film Kagemusha, what does the term \"kagemusha\" refer to?",
       answers: ["Political Decoy", "Peasant", "Masterless Samurai", "Assassin"],
       values: [true, false, false, false],
       detail: "In the film a lowly thief is used to impersonate a dying warlord to fool his enemies.",
