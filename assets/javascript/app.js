@@ -5,11 +5,11 @@ $(document).ready( function() {
       question: "This film, released in 1958 and directed by Akira Kurosawa, is considered one of the greatest inspirations for George Lucas' Star Wars: Episode IV - A New Hope.",
       answers: ["The Hidden Fortress", "Seven Samurai", "Rashomon", "Tokyo Story"],
       values: [true, false, false, false],
-      detail: "While The Hidden Fortress is a story about a princess and her protectors, George Lucas has stated that was more interested in how the story was told through the eyes of two lesser characters. In The Hidden Fortress it is the two thieves. In Star Wars C3PO and R2D2 fill these roles.",
+      detail: "While The Hidden Fortress is a story about a princess and her protectors, George Lucas has stated that he was more interested in how the story was told through the eyes of two lesser characters. In The Hidden Fortress it is the two thieves. In Star Wars C3PO and R2D2 fill these roles.",
       gif: "assets/images/hidden-fortress.gif",
     },
     {
-      question: "What is the name of the japanese film genre that was originally popularized by the film Godzilla? In English, this term can be translated as 'strange beast'.",
+      question: "What is the name of the Japanese film genre that was originally popularized by the film Godzilla? In English, this term can be translated as 'strange beast'.",
       answers: ["Yokai", "Yakuza", "Kaiju", "Anime"],
       values: [false, false, true, false],
       detail: "The genre generally features giant monsters attacking major cities and battling with the local military and sometimes other giant monsters. In the original film, Godzilla was meant to be a metaphor for nuclear weapons and their destructive capability.",
