@@ -90,7 +90,7 @@ button:hover {
 /* For smaller screens */
 @media screen and (max-width: 640px) {
   #content {
-    height: 750px;
+    height: 700px;
   }
 
   img {
